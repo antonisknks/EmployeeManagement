@@ -46,7 +46,31 @@
 
     $scope.DeleteEmployees = function () {
         $scope.collected.forEach(c => {
+            debugger;
             $http.delete("api/Employees/" + c.employeeId).then(function (r) {
+
+
+                $scope.logSkills = '';
+                if (c.skillSet.length > 0) {
+                    $scope.logSkills = 'Skill(s): ';
+                    c.skillSet.forEach(c => {
+                        $scope.logSkills += c + '/'
+                    })
+                }
+
+
+                let log = {
+                    Description: 'Delete Employee',
+                    OldValue: 'Name:'+c.name + '/'+'Surname:' + c.surname + '/'+'HiringDate:' + c.hiringDate + '/' + $scope.logSkills,
+                    NewValue: '',
+                    Date: new Date()
+                }
+
+                $http.post("api/Logs", log)
+
+
+
+
                 $scope.getEmployees();
 
             })

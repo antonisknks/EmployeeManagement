@@ -56,6 +56,27 @@
                     $scope.surname = ""
                     $scope.hiringDate = ""
                     $scope.selectedSkills = []
+
+                    $scope.logSkills = '';
+                    if (newEmp.EmployeeSkills.length > 0) {
+                        $scope.logSkills = 'Skill(s): ';
+                        newEmp.EmployeeSkills.forEach(c => {
+                            $scope.logSkills +=  c.name+'/' 
+                        })
+                    }
+                    
+
+                    let log = {
+                        Description: 'New Employee',
+                        OldValue: '',
+                        NewValue: 'Name:'+newEmp.Name + '/'+'Surname:' + newEmp.Surname + '/'+'HiringDate:' + newEmp.HiringDate + '/' + $scope.logSkills,
+                        Date: new Date()
+                    }
+
+                    $http.post("api/Logs", log)
+
+
+
                 }
                 else {
                     $scope.error = true;

@@ -14,8 +14,9 @@ namespace EmployeeManagement.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int LogId { get; set; }
-        public string Field { get; set; }
-        public string Value { get; set; }
+        public string Description { get; set; }
+        public string OldValue { get; set; }
+        public string NewValue { get; set; }
         public DateTime? Date { get; set; }
     }
 }

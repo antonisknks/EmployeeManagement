@@ -1,0 +1,38 @@
+﻿
+<div ng-controller="logsController as ctrl" layout="column" ng-cloak="" class="chipsdemoBasicUsage" ng-app="App">
+    <md-card>
+        <md-card-content>
+            <div style="color:red">The page is still under construction</div>
+        </md-card-content>
+    </md-card>
+
+    <md-card>
+        <md-card-content>
+            <div style="width:100%;overflow:auto;">
+
+
+                <table class="table table-striped" id="tableToExport">
+                    <tr>
+                        <th>Description</th>
+                        <th>Old Values</th>
+                        <th>New Values</th>
+                        <th>Update Date</th>
+                    </tr>
+                    <tr ng-repeat="l in logs ">
+                        <td>{{l.description}}</td>
+                        <td>{{l.oldValue}}</td>
+                        <td>{{l.newValue}}</td>
+                        <td>{{l.date}}</td>
+
+                    </tr>
+                </table>
+
+                <md-divider></md-divider>
+
+
+        </md-card-content>
+
+    </md-card>
+
+
+</div>

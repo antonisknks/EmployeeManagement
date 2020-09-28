@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployeeManagement.Models
@@ -21,5 +22,15 @@ namespace EmployeeManagement.Models
         public DateTime? SkillsetUpdate { get; set; }
 
         public ICollection<EmployeeSkill> EmployeeSkills { get; set; }
+
+
+        //public override string ToString()
+        //{
+        //    StringBuilder sb = new StringBuilder();
+
+        //    return base.ToString();
+        //}
+
+
     }
 }
