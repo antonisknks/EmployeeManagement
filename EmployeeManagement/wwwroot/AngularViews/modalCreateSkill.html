@@ -1,0 +1,56 @@
+﻿<div ng-controller="modalCreateSkillController" layout="column" ng-cloak="" class="chipsdemoBasicUsage" ng-app="App">
+    <md-card style="width:50%;margin: auto;display: block;margin-top: 1%;">
+        <md-cart-content>
+
+            <table>
+                <tr>
+                    <td><md-button class="md-raised md-primary" ng-click="Save()" style=" display: block;">save</md-button></td>
+                    <td>
+                        <span style="color: lightgreen;" ng-show="success">Added Successfully!!!</span>
+                        <span style="color: red;" ng-show="error">Αn error occurred</span>
+                        <span style="color: red;" ng-show="fields">Required all fields</span>
+                    </td>
+                </tr>
+            </table>
+
+
+            <md-divider></md-divider>
+            <br />
+            <table class="table table-striped " style="max-width:50%;margin: 0 auto 0 auto;">
+
+
+                <tr>
+                    <td>Name:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="md-block" ng-show="true" aria-label="readonly field">
+                            <label>Name</label>
+                            <input ng-model="modalName">
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="md-block" ng-show="true" aria-label="readonly field">
+                            <label>Description</label>
+                            <input ng-model="modalDescription">
+                        </md-input-container>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Creation Date:</td>
+                </tr>
+                <tr>
+                    <td><INPUT style="width: 100%; height: 100%; border: none;" ng-model="modalCreationDate" type="text" ng-readonly="true" /></td>
+                </tr>
+
+            </table>
+
+        </md-cart-content>
+    </md-card>
+</div>
+    

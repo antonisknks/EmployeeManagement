@@ -1,0 +1,111 @@
+﻿
+<div ng-controller="employeeController as ctrl" layout="column" ng-cloak="" class="chipsdemoBasicUsage" ng-app="App">
+
+    <md-card>
+        <md-cart-content>
+            <md-button class="md-fab md-primary" href="/newEmployee">
+                <i class="mdi mdi-account-plus mdi-24px"></i>
+            </md-button>
+            <md-button class="md-fab md-warn" ng-click="showConfirm()">
+                <i class="mdi mdi-delete mdi-24px"></i>
+            </md-button>
+
+            <md-button class="md-fab" style="background-color:#57e13c"   ng-click="exportToExcel('#tableToExport')">
+                <i class="mdi mdi-file-excel mdi-24px"></i>
+            </md-button>
+
+
+            <md-label>Search: </md-label>
+            <input type="text" style="padding:revert;" ng-model='Search' ng-change="applyFilters()" class="form-group">
+
+
+            <md-input-container style="border: 1px solid;padding: 0;">
+                <label>Skills</label>
+                <md-select ng-model="filteredSkills" multiple>
+                    <md-option ng-value="s.name" ng-repeat="s in allSkills">
+                        {{s.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <i class="mdi mdi-account-search mdi-24px" ng-click="applyFilters()"></i>
+
+
+
+            <!--This bootstrap dropdown doesn't work for some reason-->
+            <!--<div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            <span>
+                <span>Skills</span>
+            </span>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" style="max-height: 250px; overflow-y:auto">
+            <li ng-click="applyFilters()"><a>-</a></li>
+            <li ng-click="applyFilters()" ng-repeat="s in allSkills"><a>{{s.name}}</a></li>
+        </ul>
+    </div>-->
+
+
+        </md-cart-content>
+    </md-card>
+
+
+    <md-card>
+        <md-cart-content>
+            <div style="width:100%;overflow:auto;">
+
+
+                <table class="table table-striped" id="tableToExport">
+                    <tr style="background-color:black;color:aliceblue;">
+                        <th>#</th>
+                        <th ng-click="order()">
+                            <span>Surname</span>
+                            <i class="mdi mdi-menu-down" ng-show="asc"></i>
+                            <i class="mdi mdi-menu-up" ng-show="!asc"></i>
+                        </th>
+                        <th>
+                            <span>Name</span>
+                        </th>
+                        <th ng-click="order(true)">
+                            <span>Hiring Date</span>
+                            <i class="mdi mdi-menu-down" ng-show="asc"></i>
+                            <i class="mdi mdi-menu-up" ng-show="!asc"></i>
+                        </th>
+                        <th>
+                            <span>Skillset</span>
+                        </th>
+                    </tr>
+                    <tr ng-repeat="e in employeesTmp" ng-if="visible($index)">
+                        <td>
+                            <md-checkbox ng-click="checked(e)">
+                                {{ data.cb1 }}
+                            </md-checkbox>
+                            {{$index+1}}
+                        </td>
+                        <td style="white-space: pre!important;" ng-click="GoToEmployee(e.employeeId)">{{e.surname}}</td>
+                        <td style="white-space: pre!important;" ng-click="GoToEmployee(e.employeeId)">{{e.name}}</td>
+                        <td style="white-space: pre!important;" ng-click="GoToEmployee(e.employeeId)">{{e.hiringDate!=null?e.hiringDate:'-'}}</td>
+                        <td>
+                            <span ng-if="e.skillSet.length==0">-</span>
+                            <md-chips ng-hide="e.skillSet.length==0" ng-model="e.skillSet" readonly="true" md-removable="false"></md-chips>
+                        </td>
+                    </tr>
+                </table>
+
+                <md-divider></md-divider>
+
+                <ul class="paging" style="user-select: none;height:100%">
+                    <li class="mdi mdi-18px" ng-repeat="p in pager.Pages" ng-class="{'active' : p == pager.Current}" ng-click="getPage(p)">{{p+1}}</li>
+                    <li class="mdi mdi-18px"></li>
+                </ul>
+
+            </div>
+        </md-cart-content>
+    </md-card>
+
+    
+
+
+
+</div>

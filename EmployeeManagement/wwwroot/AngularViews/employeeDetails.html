@@ -1,0 +1,79 @@
+﻿<div ng-controller="employeeDetails as ctrl" layout="column" ng-cloak="" class="chipsdemoBasicUsage" ng-app="App">
+
+    <md-card style="width:50%;margin: auto;display: block;margin-top: 1%;">
+        <md-cart-content>
+
+            <div>
+                <md-switch style="display: inline-block;margin:auto;" ng-model="switch" aria-label="Switch 6" ng-change="onSwitchChange(switch)">Edit</md-switch>
+                <md-button ng-if="removable" class="md-raised md-primary" ng-click="Save()" style="display:inline-block;">save</md-button>
+
+                <md-button class="md-fab md-warn" style="display:inline-block;" ng-click="showConfirm()">
+                    <i class="mdi mdi-delete mdi-24px"></i>
+                </md-button>
+            </div>
+
+
+            <md-divider></md-divider>
+            <br />
+            <table class="table table-striped " style="max-width:50%;margin: 0 auto 0 auto;">
+
+
+                <tr>
+                    <td>Surname:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="md-block" ng-show="removable" aria-label="readonly field">
+                            <label>Surname</label>
+                            <input ng-model="surname">
+                        </md-input-container>
+                        <INPUT style="width:100%;height:100%;border: none;" type="text" ng-readonly="true" ng-if="!removable" value="{{employee.surname}}" aria-label="Readonly field">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <md-input-container class="md-block" ng-show="removable" aria-label="readonly field">
+                            <label>Name</label>
+                            <input ng-model="name">
+                        </md-input-container>
+                        <INPUT style="width:100%;height:100%;border: none;" type="text" ng-readonly="true" ng-if="!removable" value="{{employee.name}}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Skills:
+                        <md-input-container ng-show="removable">
+                            <label>Add Skills</label>
+                            <md-select ng-model="selectedSkills" multiple>
+                                <md-option ng-value="s.name" ng-repeat="s in allSkills">
+                                    {{s.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <br />
+                        <span ng-if="employee.skillsetUpdate!='Invalid date'">(Last update: {{employee.skillsetUpdate}})</span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td><md-chips ng-model="employee.skillSet" readonly="true" md-removable="removable" ng-change="onModelChange(employee.skillSet)"></md-chips></td>
+                </tr>
+                <tr>
+                    <td>Hiring Date:</td>
+                </tr>
+                <tr>
+                    <td><INPUT style="width: 100%; height: 100%; border: none;" type="text" ng-readonly="!removable" value="{{employee.hiringDate?employee.hiringDate:'-'}}" /></td>
+                </tr>
+
+            </table>
+
+            <div style="margin: 0 auto 0 auto;width: max-content;" ng-if="removable">
+                <md-calendar  ng-model="calendar"></md-calendar>
+            </div>
+
+        </md-cart-content>
+    </md-card>
+</div>

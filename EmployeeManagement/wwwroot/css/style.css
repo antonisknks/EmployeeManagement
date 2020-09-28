@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    background: url(../img/shutterstock_239827048.jpg) no-repeat;
+    background-size: cover;
+    height: 100%;
+    min-height: 100%;
+    width: 100vw;
+}
+
+.navbar {
+    height: 80px;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.top-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65vw;
+    max-width: 40%;
+    margin-right: 20px;
+}
+
+.logo {
+    width: auto;
+    height: calc(100% - 20px);
+    background: #ffffff;
+    padding: 10px;
+}
+
+.navbar ul {
+    /*  float: right;*/
+    margin-right: 20px;
+}
+
+    .navbar ul li {
+        list-style: none;
+        margin: 0 8px;
+        display: inline-block;
+        line-height: 80px;
+    }
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 13px;
+    font-family: 'Roboto', sans-serif;
+    transition: .4s;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+    background: red;
+    border-radius: 2px;
+}
+
+.wrapper .center {
+    width: 30vw;
+    min-width: 250px;
+    position: relative;
+    margin: 3% auto 0 auto;
+    font-family: sans-serif;
+    user-select: none;
+    text-align: center;
+}
+
+.float-container--wrapper {
+    width: calc(100% - 25vw);
+    margin: 100px auto 0 auto;
+}
+
+.float-container {
+    /* width: 100%;
+  border: 3px solid #fff;
+  top: 600px;
+  left: center;
+  font-family: sans-serif;
+  display: inline;
+  position: absolute;*/
+    /* text-align: center;*/
+    /*display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  position: sticky;
+  left: 19%;
+  top: 60%*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.float-child:nth-child(1),
+.float-child:nth-child(2),
+.float-child:nth-child(3) {
+    margin-right: 20px;
+}
+
+
+.float-child {
+    /*display: inline-block;
+  width: min-content;
+  height: min-content;
+  padding: 5px;   */
+    background-color: rgba(68,94,147, 0.6);
+    /*border: 3px solid #fff;
+  text-align: center;*/
+    color: white;
+    width: calc(25% - 60px);
+    position: relative;
+    /*background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;*/
+    border-radius: 4px;
+    padding: 60px .5rem .5rem .5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 220px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1.cardTitle {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px black;
+}
+
+.center h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    background-size: auto;
+    text-shadow: 2px 2px #000000;
+    letter-spacing: 3px;
+}
+
+.center h2 {
+    color: White;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    background-size: auto;
+    text-shadow: 2px 2px #000000;
+    letter-spacing: 3px;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+}
+
+.center .buttons {
+    margin: 35px 28px;
+}
+
+.cardButtons {
+    color: white;
+    background-color: rgb(126,178,221);
+    height: 50px;
+    width: 70%;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    margin: 40px 0 15px 0;
+    border: 0;
+    border-radius: 25px;
+    padding: 5px;
+    line-height: 1;
+}
+
+.buttons button {
+    height: 50px;
+    width: 250px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: rgb(249,57,67);
+    border: 1px solid #cc0000;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+    margin-top: 10px;
+}
+
+.buttons btn {
+    margin-left: 25px;
+}
+
+.buttons button:hover {
+    background: #cc0000;
+}
+
+.footerstyle {
+    height: 80px;
+    flex-basis: auto;
+    background: url(kanones_keee109_v2.png) no-repeat;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+/*RIBBON CSS*/
+
+.ribbon-2 {
+    width: 150px;
+    height: 50px;
+    background: white;
+    left: -8px;
+    top: 150px;
+    position: relative;
+}
+
+    .ribbon-2:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50px;
+        border-left: 25px solid white;
+        border-right: 25px solid transparent;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+    }
+
+
+/*RIBBON CSS*/
+
+
+
+
+.chipsdemoBasicUsage .errors {
+    font-size: 12px;
+    color: #dd2c00;
+    margin-top: 10px;
+}
+
+.chipsdemoBasicUsage .demo-long-fruit-input {
+    min-width: 340px;
+}
+
+.chipsdemoBasicUsage .custom-chips md-chip {
+    position: relative;
+    padding-right: 24px;
+}
+
+    .chipsdemoBasicUsage .custom-chips md-chip .md-chip-remove-container {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        margin-right: 0;
+        height: 26px;
+        display: none;
+    }
+
+        .chipsdemoBasicUsage .custom-chips md-chip .md-chip-remove-container button.demo-remove-vegetable-chip {
+            position: relative;
+            height: 24px;
+            width: 24px;
+            line-height: 30px;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+            .chipsdemoBasicUsage .custom-chips md-chip .md-chip-remove-container button.demo-remove-vegetable-chip md-icon {
+                transform: translate(0, -3px) scale(0.75);
+                fill: rgba(0, 0, 0, 0.33);
+            }
+
+    .chipsdemoBasicUsage .custom-chips md-chip:hover:not(.md-readonly) .md-chip-remove-container {
+        display: block;
+    }
+
+    .chipsdemoBasicUsage .custom-chips md-chip.md-focused:not(.md-readonly) .md-chip-remove-container {
+        display: block;
+    }
+
+        .chipsdemoBasicUsage .custom-chips md-chip.md-focused:not(.md-readonly) .md-chip-remove-container button.demo-remove-vegetable-chip md-icon {
+            fill: rgba(255, 255, 255, 0.87);
+        }
+

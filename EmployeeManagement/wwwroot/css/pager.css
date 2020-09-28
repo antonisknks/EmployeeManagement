@@ -1,0 +1,40 @@
+﻿/*#region Pagination */
+.paging .mdi {
+    padding-top: 1px;
+}
+/* Fix */
+.paging {
+    display: flex;
+    background-color: #eef1f5;
+    margin: 10px 0;
+}
+
+    .paging li {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        max-width: 50px;
+    }
+
+    .paging > li:hover {
+        background-color: #dee2e6;
+    }
+
+    .paging > li.active {
+        background-color: #3f51b5;
+        color: #fff;
+    }
+
+    .paging > li:last-child {
+        background-color: transparent !important;
+        flex-grow: 0;
+        padding: 0 7px;
+        max-width: 100px;
+    }
+
+    .paging .separator {
+        background-color: transparent !important;
+        color: #dadada;
+    }

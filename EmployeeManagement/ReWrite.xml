@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rewrite>
+	<rules>
+		<rule name="angularjs routes" stopProcessing="true">
+			<match url="(Content/*)|(api/*)|(js/*)|(Bundles/*)|(AngularViews/*)|(css/*)" negate="true" />
+			<conditions logicalGrouping="MatchAll">
+				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+				<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+				<add input="{REQUEST_URI}" pattern="^/(api)" negate="true" />
+				<add input="{REQUEST_URI}" pattern="^/(css)" negate="true" />
+				
+				<add input="{REQUEST_URI}" pattern="^/(content)" negate="true" />
+				
+				<add input="{REQUEST_URI}" pattern="^/(AngularViews)" negate="true" />
+			</conditions>
+			<action type="Rewrite" url="/" />
+		</rule>
+	</rules>
+</rewrite>

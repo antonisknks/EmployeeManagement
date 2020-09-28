@@ -1,0 +1,54 @@
+﻿
+<div ng-controller="skillController">
+
+    <md-card>
+        <md-cart-content>
+            <md-button class="md-fab md-primary" href="/newSkill">
+                <i class="mdi mdi-account-plus mdi-24px"></i>
+            </md-button>
+            <md-button class="md-fab md-warn" ng-click="showConfirm()">
+                <i class="mdi mdi-delete mdi-24px"></i>
+            </md-button>
+        </md-cart-content>
+    </md-card>
+
+
+
+
+    <md-card>
+        <md-cart-content>
+            <div style="width:100%;overflow:auto;">
+                <table class="table table-striped ">
+
+                    <tbody>
+                        <tr style="background-color:black;color:aliceblue;">
+                            <th>#</th>
+                            <th>
+                                <span>Name</span>
+                            </th>
+                            <th>
+                                <span>Description</span>
+                            </th>
+                            <th>
+                                <span>Creation Date</span>
+                            </th>
+                        </tr>
+                        <tr ng-repeat="s in skills" >
+                            <td>
+                                <md-checkbox ng-click="checked(s)">
+                                    {{ data.cb1 }}
+                                </md-checkbox>
+                                {{$index+1}}
+                            </td>
+                            <td style="white-space: pre!important;" ng-click="GoToSkill(s.skillId)">{{s.name}}</td>
+                            <td style="white-space: pre!important;" ng-click="GoToSkill(s.skillId)">{{s.description}}</td>
+                            <td style="white-space: pre!important;" ng-click="GoToSkill(s.skillId)">{{s.creationDate!=null?s.creationDate:'-'}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </md-cart-content>
+    </md-card>
+</div>
